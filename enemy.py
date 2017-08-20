@@ -4,12 +4,21 @@ import random
 from person import Person
 
 class Enemy(Person):
-	def __init__(self, row, col):
+	def __init__(self, row, col, speed):
 		super().__init__(row, col, 'enemy')
 		self.__lastMoved = time.clock()
-		self.__speed = 0.12
-		
+		self.__speed = speed
 		self.__lastDirection = 1
+		self.__life = 1
+		self.__lastWhenHit = time.clock()
+
+	def shouldDraw(self):
+		return (self.__life > 0)
+
+	def explosionHit(self, game):
+		if(self.__lastWhenHit + 1 < time.clock()):
+			self.__lastWhenHit = time.clock()
+			self.__life -= 1
 
 	def move(self, direction):
 		if(time.clock() < self.__lastMoved + self.__speed):

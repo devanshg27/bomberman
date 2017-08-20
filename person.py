@@ -16,7 +16,7 @@ class Person(BoardObject):
 			if(boardObject.getUID() == 'wall'):
 				if(boardObject.areColliding(tempRow, tempCol)):
 					return False
-			elif(boardObject.getUID() == 'bricks'):
+			elif(boardObject.getUID() == 'bricks' and boardObject.shouldDraw()):
 				if(boardObject.areColliding(tempRow, tempCol)):
 					return False
 			elif(boardObject.getUID() == 'bomb' and not boardObject.areColliding(super().getRow(), super().getCol())):

@@ -27,3 +27,6 @@ class BoardObject(object):
 
 	def areColliding(self, row, col):
 		return (self.__posRow <= row+1 and row <= self.__posRow+1 and self.__posCol <= col+3 and col <= self.__posCol+3)
+
+	def explosionHit(self, game):
+		pass

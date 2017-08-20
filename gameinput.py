@@ -41,10 +41,10 @@ class GameInput(object):
 	def checkInput(self, game):
 		if(self.__kb.kbhit()):
 			ch = self.__kb.getch()
-			if(ch == 'q'): self.__game.endGame()
-			elif(ch == 'w'): self.__game.move(1)
-			elif(ch == 'd'): self.__game.move(2)
-			elif(ch == 's'): self.__game.move(3)
-			elif(ch == 'a'): self.__game.move(4)
-			elif(ch == 'b'): self.__game.dropBomb()
-			elif(ch == 'p'): self.__game.powerUp()
+			if(ch == 'q' or ch == 'Q'): self.__game.endGame()
+			elif(ch == 'w' or ch == 'W'): self.__game.move(1)
+			elif(ch == 'd' or ch == 'D'): self.__game.move(2)
+			elif(ch == 's' or ch == 'S'): self.__game.move(3)
+			elif(ch == 'a' or ch == 'A'): self.__game.move(4)
+			elif(ch == 'b' or ch == 'B'): self.__game.dropBomb()
+			elif(ch == 'p' or ch == 'P'): self.__game.powerUp()

@@ -17,9 +17,9 @@ class Game(object):
 		while self.isGameRunning:
 			# self.__win.handle_events(self.__player)
 			self.__display.render(self.__board.getCurrentState())
+			self.__board.checkStatus()
 			self.__gameInput.checkInput(self)
 			self.__board.updateState()
-			self.__board.checkStatus()
 			# time.sleep(0.12)
 			# self.__player.update()
 			# for entity in self.__level.copy():
